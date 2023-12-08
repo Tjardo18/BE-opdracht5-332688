@@ -12,6 +12,7 @@
     --bg-color: #222327;
     --text-color: #fff;
     --main-color: #29fd53;
+    --second-color: #ff2287;
 }
 
 body {
@@ -123,6 +124,7 @@ h3 {
     font-size: 20px;
     margin: 0 0 10px;
     font-weight: 600;
+    z-index: 50;
 }
 
 table,
@@ -155,4 +157,10 @@ select {
 
 input[type=radio] {
     margin: 12px 0;
+}
+
+span:not(.logo span) {
+    cursor: pointer;
+    color: var(--second-color);
+    font-weight: 500;
 }
