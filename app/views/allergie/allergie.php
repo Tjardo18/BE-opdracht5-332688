@@ -48,8 +48,7 @@
             <div class="ruimte">
                 <table>
                     <thead>
-                        <th>Naam</th>
-                        <th>Omschrijving</th>
+                        <?= $data['th']; ?>
                     </thead>
                     <tbody>
                         <?= $data['rows']; ?>

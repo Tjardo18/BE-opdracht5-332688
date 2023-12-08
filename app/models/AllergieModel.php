@@ -12,8 +12,6 @@ class AllergieModel
     public function getAllergien($id)
     {
         $sql = "SELECT
-                    P.Naam AS PNaam,
-                    P.Barcode,
                     A.Naam AS ANaam,
                     A.Omschrijving
                 FROM Product AS P
@@ -21,6 +19,19 @@ class AllergieModel
                 JOIN Allergeen AS A ON PA.AllergeenId = A.Id
                 WHERE P.Id = $id
                 ORDER BY ANaam ASC;";
+
+        $this->db->query($sql);
+
+        return $this->db->resultSet();
+    }
+
+    public function getProduct($id)
+    {
+        $sql = "SELECT
+                    Naam AS PNaam,
+                    Barcode
+                FROM Product
+                WHERE Id = $id;";
 
         $this->db->query($sql);
 

@@ -12,21 +12,33 @@ class Allergie extends BaseController
     public function index($id)
     {
         $result = $this->allergieModel->getAllergien($id);
+        $product = $this->allergieModel->getProduct($id);
 
-        $rows = "";
-        foreach ($result as $allergien) {
 
-            $rows .= "<tr>
-                        <td>$allergien->ANaam</td>
-                        <td>$allergien->Omschrijving</td>
-                      </tr>";
+        if ($result == NULL) {
+            $th = "";
+            $rows = "<h3 style='text-align: center'>In dit product zitten geen stoffen die een allergische reactie kan veroorzaken</h3>";
+            header("refresh:4;url=" . URLROOT . "/overzicht");
+        } else {
+            $th = "<th>Naam</th>
+            <th>Omschrijving</th>";
+
+            $rows = "";
+            foreach ($result as $allergien) {
+
+                $rows .= "<tr>
+                            <td>$allergien->ANaam</td>
+                            <td>$allergien->Omschrijving</td>
+                        </tr>";
+            }
         }
 
         $data = [
             'title' => 'Overzicht Allergenen',
-            'naamProduct' => $result[0]->PNaam,
-            'barcode' => $result[0]->Barcode,
-            'rows' => $rows
+            'naamProduct' => $product[0]->PNaam,
+            'barcode' => $product[0]->Barcode,
+            'rows' => $rows,
+            'th' => $th,
         ];
 
         $this->view('allergie/allergie', $data);
