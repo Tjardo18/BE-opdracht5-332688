@@ -54,10 +54,7 @@
             <div class="ruimte">
                 <table>
                     <thead>
-                        <th>Naam Product</th>
-                        <th>Datum Laatste Levering</th>
-                        <th>Aantal</th>
-                        <th>Eerstvolgende Levering</th>
+                        <?= $data['th']; ?>
                     </thead>
                     <tbody>
                         <?= $data['rows']; ?>
