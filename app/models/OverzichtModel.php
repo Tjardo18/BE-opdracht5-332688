@@ -16,7 +16,7 @@ class OverzichtModel
                     P.Barcode,
                     P.Naam,
                     M.VerpakkingsEenheid,
-                    M.AantalAanwezig
+                    IFNULL(M.AantalAanwezig, '0') AS AantalAanwezig
                 FROM Product P
                 JOIN Magazijn M ON P.Id = M.ProductId
                 ORDER BY P.Barcode ASC;";
