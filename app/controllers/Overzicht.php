@@ -22,7 +22,7 @@ class Overzicht extends BaseController
                         <td>$overzicht->VerpakkingsEenheid</td>
                         <td>$overzicht->AantalAanwezig</td>
                         <td>
-                            <a href='allergeen/id/{$overzicht->Id}'>
+                            <a href='allergie/id/{$overzicht->Id}'>
                                 <i class='fa-solid fa-xmark' style='color: #ff0000;'></i>
                             </a>
                         </td>
