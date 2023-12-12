@@ -16,7 +16,7 @@ class Leverancier extends BaseController
 
         if ($result[0]->AantalAanwezig == 0) {
             $th = "";
-            $rows = "<h3 style='text-align: center'>Er is van dit product op dit moment geen voorraad aanwezig,<br> de verwachte eerstvolgende levering is: <span>" . $result[0]->DatumEVL . "</span></h3>";
+            $rows = "<h1 style='text-align: center'>Er is van dit product op dit moment geen voorraad aanwezig,<br> de verwachte eerstvolgende levering is: <span>" . $result[0]->DatumEVL . "</span></h1>";
             header("refresh:4;url=" . URLROOT . "/overzicht");
         } else {
             $th = "<th>Naam Product</th>

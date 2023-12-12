@@ -17,7 +17,7 @@ class Allergie extends BaseController
 
         if ($result == NULL) {
             $th = "";
-            $rows = "<h3 style='text-align: center'>In dit product zitten geen stoffen die een allergische reactie kan veroorzaken</h3>";
+            $rows = "<h1 style='text-align: center'>In dit product zitten geen stoffen die een<br>allergische reactie kan veroorzaken</h1>";
             header("refresh:4;url=" . URLROOT . "/overzicht");
         } else {
             $th = "<th>Naam</th>
