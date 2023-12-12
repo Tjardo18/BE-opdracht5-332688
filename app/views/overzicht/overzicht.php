@@ -5,59 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?= URLROOT; ?>/img/store-avatar.png" type="image/x-icon">
     <link rel="stylesheet" href="<?= URLROOT; ?>/css/style.css">
     <title>Magazijn Overzicht</title>
 </head>
 
 <body>
 
-    <header>
-        <a href="<?= URLROOT; ?>" class="logo">
-            <i class="ri-home-3-fill"></i>
-            <span>TJARDO</span>
+    <div class="logo">
+        <a href="<?= URLROOT; ?>/overzicht">
+            <img src="<?= URLROOT; ?>/img/logo-wit.png">
         </a>
-
-        <ul class="navbar">
-            <li><a href="<?= URLROOT; ?>">Home</a></li>
-            <li><a href="<?= URLROOT; ?>/overzicht" class="active">Magazijn Overzicht</a></li>
-        </ul>
-
-        <div class="main">
-            <a href="#" class="user">
-                <i class="ri-user-fill"></i>
-                Sign In
-            </a>
-            <a href="#">Register</a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <h1>
-            <?= $data['title']; ?>
-        </h1>
-        <div class="card">
-            <div class="ruimte">
-                <table>
-                    <thead>
-                        <th>Barcode</th>
-                        <th>Naam</th>
-                        <th>Verpakkingseenheid</th>
-                        <th>Aantal Aanwezig</th>
-                        <th>Allergenen Info</th>
-                        <th>Leverantie Info</th>
-                    </thead>
-                    <tbody>
-                        <?= $data['rows']; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
 
-    <script src="<?= URLROOT; ?>/js/nav.js"></script>
+    <div class="card">
+        <div class="title">
+            <h1>
+                <?= $data['title']; ?>
+            </h1>
+        </div>
+        <table>
+            <thead>
+                <th>Barcode</th>
+                <th>Naam</th>
+                <th>Verpakkingseenheid</th>
+                <th>Aantal Aanwezig</th>
+                <th>Allergenen Info</th>
+                <th>Leverantie Info</th>
+            </thead>
+            <tbody>
+                <?= $data['rows']; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="<?= URLROOT; ?>/js/column.js"></script>
+    <script src="<?= URLROOT; ?>/js/copy.js"></script>
 
 </body>
 
