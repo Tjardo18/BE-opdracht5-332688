@@ -11,43 +11,35 @@
 
 <body>
 
-    <header>
-        <a href="<?= URLROOT; ?>" class="logo">
-            <i class="ri-home-3-fill"></i>
-            <span>TJARDO</span>
+    <div class="logo">
+        <a href="<?= URLROOT; ?>/overzicht">
+            <img src="<?= URLROOT; ?>/img/logo-wit.png">
         </a>
+    </div>
 
-        <ul class="navbar">
-            <li><a href="<?= URLROOT; ?>" class="active">Home</a></li>
-            <li><a href="<?= URLROOT; ?>/overzicht">Magazijn Overzicht</a></li>
-        </ul>
-
-        <div class="main">
-            <a href="#" class="user">
-                <i class="ri-user-fill"></i>
-                Sign In
-            </a>
-            <a href="#">Register</a>
-            <div class="bx bx-menu" id="menu-icon"></div>
+    <div class="card">
+        <div class="title">
+            <h1>
+                <?= $data['title']; ?>
+            </h1>
         </div>
-    </header>
 
-    <h2><?= $data['title']; ?></h2>
+        <table border="1">
+            <thead>
+                <th>Id</th>
+                <th>Naam</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?= $data['id']; ?></td>
+                    <td><?= $data['name']; ?></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table border="1">
-        <thead>
-            <th>Id</th>
-            <th>Naam</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td><?= $data['id']; ?></td>
-                <td><?= $data['name']; ?></td>
-            </tr>
-        </tbody>
-    </table>
 
-    <script src="<?= URLROOT; ?>/js/nav.js"></script>
+    <script src="<?= URLROOT; ?>/js/column.js"></script>
 </body>
 
 </html>
